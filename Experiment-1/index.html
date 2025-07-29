@@ -6,7 +6,21 @@
     <title>Registration From </title>
 </head>
 <body>
-    <h1>Student Regestration Form</h1>
+    <link rel="stylesheet" href="style.css">
+    
+    <h1>Student Registration Form</h1>
+    <form>
+           <label>Name:</label><br>
+           <input type="text" placeholder="Enter your full name"  pattern="[A-Za-z]+" maxlength="20" required><br>
+
+           <label>Email:</label><br>
+           <input type="email" placeholder="Enter your email" required ><br>
+
+           <label>Age:</label><br>
+           <input type="number" placeholder="Enter your age" min ="15" max="40" required><br>
+
+           <button type="submit">Register</button>
+    </form>
     <form>
            <label>Name:</label><br>
            <input type="text" placeholder="Enter your full name"  pattern="[A-Za-z]+" maxlength="20" required><br>
