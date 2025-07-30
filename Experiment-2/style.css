@@ -1,0 +1,104 @@
+/* body { 
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.balance {
+  font-size: 24px;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.deposit {
+  background-color: green;
+  color: white;
+}
+
+.withdraw {
+  background-color: red;
+  color: white;
+ } */
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Outer container to center everything */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card-like inner container */
+.inner-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 280px;
+}
+
+/* Balance amount */
+.amount {
+  font-size: 32px;
+  color: green;
+  margin-bottom: 20px;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual button styles */
+button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.deposit {
+  background-color: #4CAF50; /* Green */
+}
+
+.withdraw {
+  background-color: #f44336; /* Red */
+}
+
+button:hover {
+  opacity: 0.9;
+}
