@@ -1,0 +1,17 @@
+In the above experiment we first created the HTML file and name it as index .html in which we give title to browsing window as Simple Balance UI  .
+In body tag we created a  class and name it as container and this container class is further divided into two parts inner container and buttons. 
+The inner container consist of the amount that is  shown . 
+And In button class the the button tag is use to create to different buttons for deposit and withdrawal  .
+So, these are following things we do in index.html file to make all the seen interface to the webpage .
+For styling we create another file in Experiment-2 folder and name it as style.css . 
+To connect this file to the HTML file we use link tag to connect it . 
+Then in style.css we first started making changes in body selector we fix its margin and padding to 0 and its font size to arial  and also add another option of sans-serif which is use when the arial font is not working in the webpage and we change the colour of website to mild gray -white .
+Then we move to container selector .
+So in container selector  we created display flex box which make it easy to align the elements inside it . 
+After that I align the content to center with the height of 100vh . 
+Then comes the inner container  , we set its background in white colour and do padding of 30px so that their remain the space between the inner child elements and the container  set its border radius align its text .
+Then comes the amount parts in which we fix font size to and its color to green .
+Button container   we use button selector and make it as flex box having flex direction column and gap between two button also fixing their color while  font size and border radius  .
+Then come the styling part of individual button the deposit selector background color as  green and withdraw selector as red  .
+I this way the whole experiment coding part is completed and we run it on live server to get the desired results . 
+Also in the end all the code is push to the git hub .
