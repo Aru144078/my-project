@@ -1,0 +1,48 @@
+:root{
+    --bg-color-header: green;
+     --bg-color-footer: rgb(5, 130, 51);
+    --bg-color-nav: rgb(220, 223, 222);
+    --bg-color-main: white;
+    --text-color: black;
+}
+
+input:checked ~ .Dashboard{
+    --bg-color-header: grey;
+    --bg-color-footer: grey;
+    --bg-color-nav: rgb(60, 60, 60);
+    --bg-color-main: rgb(30, 30, 30);
+    --text-color: white;
+}
+
+header{
+    background-color: var(--bg-color-header);
+    border: 1px solid black;
+    grid-column: 1 / span 2;
+    color: white;
+}
+
+nav{
+    border: 1px solid black;
+    /* background-color: rgb(220, 223, 222); */
+    background-color: var(--bg-color-nav);
+}
+
+main{
+    border: 1px solid black;
+    background-color: var(--bg-color-main);
+}
+footer{
+    border: 1px solid black;
+    background-color: var(--bg-color-footer);
+    /* background-color: rgb(5, 130, 51); */
+     grid-column: 1 / span 2;
+     color: white;
+}
+.Dashboard
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 200px auto 60px;
+    height: 100vh;
+    color: var(--text-color);
+}

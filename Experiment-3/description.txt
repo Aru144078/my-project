@@ -1,0 +1,61 @@
+ADMIN DASHBOARD WITH CSS GRID LAYOUT AND THEME SWITCHING 
+
+This project is fully functional , responsive Admin Dashboard created using HTML5 and CSS Grid layout,
+with an integrated light /dark theme switching feature controlled purely through CSS variables and a checkbox toggle.
+It provides a professional, clean interface that can be adapted for various administrative purposes such as managing users, viewing reports, and accessing settings.
+
+The dashboard is divided into four main sections:
+
+1. Header Section :
+
+ a. Displays the dashboard title: Admin Dashboard.
+ b. Contains a theme toggle labeled Dark Mode.
+ c. Uses CSS variables (--bg-color-header) to control background color dynamically.
+ d. In light mode, the header background is green, and in dark mode, it changes to grey.
+ e. The theme change happens instantly when the checkbox is checked, without requiring JavaScript or a page reload.
+
+2. Navigation Sidebar :
+
+ a. Positioned on the left-hand side of the grid layout.
+ b. Contains links to Home, User, and Setting.
+ c. Provides a fixed structure for quick navigation to dashboard sections.
+ d. Styled with a light background color for readability.
+
+3. Main Content Area :
+
+ a. Displays a welcome message: “Welcome, Arushi!” along with sample placeholder text.
+ b. Serves as the central workspace for charts, tables, reports, and data visualization.
+ c. Can be easily extended to display dynamic content.
+
+4. Footer Section :
+
+ a. Spans across the full width of the dashboard.
+ b. Displays copyright text:
+    © 2025 Admin Panel
+ c. Styled with a green background to complement the header in light mode.
+
+Layout and Styling Details:
+
+a. The .Dashboard container uses CSS Grid with grid-template-columns: auto auto and grid-template-rows: 200px auto 60px, ensuring a clean, responsive structure.
+b. The layout adapts to different screen sizes and maintains proportions for each section.
+c. Borders and padding create separation between sections for visual clarity.
+d. Theme switching is achieved using CSS variable overrides on the .Dashboard when the input:checked selector is active.
+
+Key Features Implemented:
+
+a. HTML5 Semantic Structure :
+ Header, nav, main, and footer are used for accessibility and clarity.
+b. Responsive CSS Grid :
+ Ensures the dashboard adapts well to different devices.
+c. Theme Switching Without JavaScript :
+ The theme changes instantly using only CSS variables and the checkbox’s :checked state.
+d. Clean, Professional Design :
+ Soft colors, grid alignment, and a balanced layout make the interface user-friendly.
+
+Learning Outcomes:
+
+1. Mastered CSS Grid Layout for multi-section page design.
+2. Learned how to implement light/dark theme switching using CSS variables and state selectors.
+3. Applied semantic HTML elements for better structure and accessibility.
+4. Understood the concept of styling with reusable variables for quick design changes.
+5. Practiced creating a scalable dashboard layout that can be extended with charts, tables, and other data visualization components.
