@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.counter-box {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.counter {
+  margin-top: 10px;
+  font-weight: bold;
+}
