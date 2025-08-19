@@ -1,0 +1,42 @@
+Live Character Counter for Textarea
+
+Task Description :
+
+Add a textarea input field where the user can type text.
+Place a character counter element below or beside the textarea.
+As the user types, the character counter updates instantly, showing the exact number of characters typed.
+If the user deletes characters, the counter decreases accordingly.
+
+
+Expected Output :
+
+When the user types text, the counter dynamically increases.
+When the user deletes text, the counter decreases.
+Example:
+Input: "Hello" → Character Counter shows 5.
+Input: "Hello World!" → Character Counter shows 12.
+The counter always reflects the current text length inside the textarea.
+
+CSS Styling Breakdown:
+
+A Structured Overview
+Page Background (body) :
+Apply a neutral/light background for clarity.
+Add padding to keep the textarea centered.
+Textarea:
+width: 100% → full width of the form box.
+height: 100px → sufficient space for typing.
+padding: 10px; font-size: 16px; → improves readability.
+border-radius: 5px; border: 1px solid #ccc; → soft edges with a light border.
+Counter (span / div element)
+Placed below the textarea.
+font-weight: bold; margin-top: 8px; → visible and separated.
+Centered box with shadow and rounded corners for better aesthetics.
+
+Learning Outcomes :
+
+Understanding how to use textarea elements in HTML.
+Learning real-time event handling with JavaScript (input event).
+Practicing dynamic DOM manipulation (updating counter text instantly).
+Improving user interaction by providing instant feedback.
+Enhancing UI/UX using CSS for better readability and style.
