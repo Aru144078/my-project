@@ -1,0 +1,49 @@
+Create a webpage with an SVG area that acts as a drawing canvas.
+When the user clicks and drags inside the canvas, a shape (like a line or rectangle) should be drawn dynamically.
+
+The tool must respond to mouse events:
+
+mousedown → start drawing the shape.
+mousemove → resize/update the shape as the mouse moves.
+mouseup → finish the shape.
+Users should be able to draw multiple shapes by repeating the click-and-drag action.
+All shapes are created and updated in real-time using JavaScript without refreshing the page.
+
+CSS Styling Breakdown: A Structured Overview
+
+ELEMENT: body (Page Layout)
+
+Purpose: Sets background and font for the page.
+background-color: #f9f9f9; → Light background for a clean look.
+font-family: Arial, sans-serif; → Ensures readable text.
+display: flex; justify-content: center; align-items: center; height: 100vh; → Centers the canvas vertically and horizontally.
+
+ELEMENT: .canvas-container (SVG Wrapper)
+
+Purpose: Styles the main drawing area.
+background: #fff; → White background for contrast.
+border: 2px solid #4a90e2; → Blue border highlights the drawing space.
+border-radius: 8px; → Smooth rounded corners.
+box-shadow: 0 4px 10px rgba(0,0,0,0.1); → Subtle elevation effect.
+
+ELEMENT: svg (Drawing Canvas)
+
+Purpose: Defines the space for interactive drawings.
+width: 800px; height: 500px; → Large drawing area.
+cursor: crosshair; → Shows crosshair cursor for precision.
+
+Expected Output:
+
+A webpage with a centered drawing canvas (SVG area).
+When the user clicks and drags inside the canvas:
+A shape (rectangle/line) appears and resizes as the mouse moves.
+On releasing the mouse, the shape is fixed.
+User can draw multiple shapes by repeating the drag action.
+The drawing experience feels real-time and interactive, without reloading the page.
+
+Learning Outcomes:
+
+Understood how to create and manipulate SVG elements dynamically with JavaScript.
+Gained hands-on practice with mouse event handlers (mousedown, mousemove, mouseup).
+Learnt how to update attributes in real time (width, height, coordinates of shapes).
+Improved skills in building interactive web applications with custom user interactions.
