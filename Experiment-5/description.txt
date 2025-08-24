@@ -1,0 +1,57 @@
+Create a webpage that displays a list of products such as shoes, shirts, or gadgets.
+A dropdown menu is placed above the product list with options like "All", "Category 1", "Category 2", etc.
+When the user selects a category, the product list updates immediately to show only the items from that category.
+If "All" is selected, all products are shown.
+The filtering is done dynamically using JavaScript event handling and DOM manipulation without reloading the page.
+
+CSS Styling Breakdown: A Structured Overview
+
+ELEMENT: body (Page Background)
+Purpose: Sets the overall background for the web page.
+Property: background-color: #f2f2f2;
+Effect: Applies a soft gray background for a clean look.
+Property: font-family: Arial, sans-serif;
+Effect: Ensures text is easy to read.
+ELEMENT: .container (Main Wrapper)
+Purpose: Centers and styles the entire product filter area.
+
+Properties & Effects:
+
+max-width: 800px; Limits width for readability.
+margin: 40px auto; Centers the container on the page.
+padding: 20px;  Adds spacing inside the container.
+background: #fff;  White background for contrast.
+border-radius: 8px;  Smooth rounded corners.
+box-shadow: 0 4px 10px rgba(0,0,0,0.1); Subtle elevation effect.
+ELEMENT: select (Dropdown Filter)
+Purpose: Provides filter options.
+
+Properties & Effects:
+
+padding: 10px;  Adds comfortable spacing.
+font-size: 16px;  Improves readability.
+border-radius: 5px;  Matches form aesthetics.
+ELEMENT: .product-list (Products Container)
+Purpose: Holds all product items in a grid format.
+
+Properties & Effects:
+
+display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); Creates responsive product cards.
+gap: 20px;  Adds spacing between product items.
+
+ELEMENT: .product (Product Item Card)
+Purpose: Styles individual products.
+
+Properties & Effects:
+
+border: 1px solid #ddd;  Defines card boundaries.
+padding: 15px;  Creates internal spacing.
+border-radius: 6px; Slightly rounded corners.
+text-align: center;  Aligns content neatly.
+background: #fafafa;  Light background to differentiate from page.
+
+Learning Outcomes:
+
+Learnt how to use JavaScript DOM manipulation to update content dynamically.
+Practiced creating real-time product .
+Improved ability to design interactive and user-friendly web applications.
