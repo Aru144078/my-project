@@ -1,0 +1,134 @@
+Product Card Component:
+
+
+ CSS (index.css / App.css)
+1.Target: #root
+Purpose: Styles the main container where the React app is mounted.
+Properties:
+max-width: 1280px; → Ensures the app does not stretch too .
+margin: 0 auto; → Centers the app horizontally.
+padding: 2rem; → Adds space inside the container.
+text-align: center; → Aligns content centrally.
+
+2.Target: .logo
+Purpose: Adds styling and hover effects to logo images.
+Properties:
+height: 6em; → Fixed height of logo.
+padding: 1.5em; → Adds spacing around logo.
+transition: filter 300ms; → Smooth hover effect.
+filter: drop-shadow(...) → Adds glowing shadow when hovered.
+
+3.Animation: @keyframes logo-spin
+Purpose: Rotates the logo infinitely.
+Behavior:
+Starts at rotate(0deg) and continuously spins to rotate(360deg).
+
+
+4.Target: .card
+Purpose: Adds padding around card elements.
+Properties:
+padding: 2em;
+
+5.Target: .read-the-docs
+Purpose: Styles extra instructional text.
+Property:
+ color: #888; → Gives a light gray color.
+
+
+BREAKDOWN OF REACT COMPONENTS:
+
+1.ProductCard.jsx:
+Purpose: A reusable component that displays product details.
+Props Used:
+ a) name → Product name.
+
+Valid Inputs: 
+"Wireless Mouse"
+"Keyboard"
+"Monitor 27"
+
+ Invalid Inputs:
+"" → Empty string (name required)
+12345 → Number type instead of string
+"Mouse@2025" → Contains special character.
+
+b) price → Product price.
+Requirement: Must be a number greater than 0.
+
+Valid Inputs:
+25
+199.99
+4500
+
+ Invalid Inputs:
+-10 → Negative price not allowed
+"free" → String instead of number
+ 0 → Zero value.
+
+c) inStock → Boolean, shows stock status.
+Prop: inStock (Stock Status)
+Requirement: Boolean (true or false).
+
+ Valid Inputs:
+true → Product is available
+false → Product is out of stock
+
+ Invalid Inputs:
+"yes" → String instead of boolean
+ 1 or 0 → Number instead of boolean
+ null / undefined → Missing value.
+
+2.App.jsx:
+Purpose: Main component that renders all products.
+Logic:
+Defines products array with multiple objects.
+Uses .map() to dynamically create multiple <ProductCard />.
+Styling: Flexbox to align product cards in a row.
+
+Valid Cases:
+Valid Array Structure
+All objects contain name, price, inStock props.
+
+3. main.jsx:
+Purpose: Entry point of React app.
+Process:
+Finds <div id="root"></div> in index.html.
+Mounts <App /> component inside it.
+
+Valid Cases:
+Root Div Exists
+
+Invalid Cases:
+Missing Root Div in index.html
+
+
+BREAKDOWN  OF HTML FILE :
+
+1. index.html:
+Purpose: Base HTML file where React app is injected.
+
+Key Element:
+<div id="root"></div> → Placeholder for React components.
+<script type="module" src="/src/main.jsx"></script> → Loads React app entry point .
+
+Valid Cases:
+Correct Root Div
+Correct Script Import.
+
+Invalid Cases:
+a)Missing Root Div -
+
+"<!-- <div id="root"></div> -->"
+b)Wrong Root ID
+
+"<div id="app"></div>"
+
+c)React cannot find root, App won’t render.
+Missing Script Import
+"<div id="root"></di".
+
+LEARNING OUTCOMES:
+1.Learn how to create a reusable React component using props.
+2. Learn how to use an array + map() to render multiple components dynamically.
+3.How ReactDOM mounts components inside index.html.
+4. Learn how to apply CSS + inline styles to style React component.

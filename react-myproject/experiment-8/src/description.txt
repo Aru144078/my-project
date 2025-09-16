@@ -1,0 +1,95 @@
+LIBRARY MANAGMENT UI WITH SEARCH, ADD, AND REMOVE BOOK FUNCTIONALITY:
+
+
+BREAKDOWN OF app.jsx fle 
+Purpose:
+React component App implements a Library Management System.
+Functionalities:
+Display existing books.
+Search books by title.
+Add new books (title + author).
+Remove existing books.
+Uses React useState hook for state management.
+
+Functions:
+
+1.	addBook()
+Purpose: Adds a new book {title, author} into the books array.
+
+Valid input:
+title and author are non-empty strings
+Example: "Python Basics", "Guido van Rossum"
+
+Invalid input:
+Empty title or author (""), null, or undefined
+Example: title="", author="" → Book is not added.
+
+2.removeBook(index)
+Purpose: Removes the book at the specified index from the books array.
+
+Valid input:
+Index within range [0, books.length - 1]
+
+Invalid input:
+Index out of bounds → JavaScript error (rare, UI prevents it).
+
+3. filteredBooks
+Purpose: Filters books whose title includes search string (case-insensitive)
+
+Valid input:
+Any string in search → shows matching books
+
+Invalid input:
+None; empty string returns all books.
+
+
+BREAKDOWN OF APP.CSS FILE:
+
+A)Purpose:
+Provides basic styling for the Library Management UI.
+Makes inputs, buttons, and book list visually appealing.
+Hover effect on buttons improves UX.
+
+Used css selectors:
+
+
+1).app	
+Purpose:
+Center align content, padding, font-family
+2) input:	
+Purpose:
+Padding and margin for spacing
+3) button	
+Purpose:
+Black background, white text, rounded edges, cursor pointer
+4)button: hover	
+Purpose:
+Changes background to gray on hover.
+
+Valid CSS Cases:
+Properties applied correctly on supported browsers.
+Hover effect works as expected.
+
+Invalid CSS Cases:
+Missing properties → UI looks less polished, functionality unaffected.
+
+main.jsx (src/main.jsx)
+Purpose: Entry point for the React app; renders App component inside #root.
+
+index.html (project root)
+Purpose: HTML template for the app.
+
+package.json
+Purpose: Project configuration and dependencies.
+Do not edit manually unless you are adding new packages.
+
+
+we haven't edit the main.jsx and index.html files they are same as in the default syntax is there .
+
+LEARNING OUTCOMES:
+1)Learned how to create a functional component (App.jsx) in React.
+2)Understood the difference between stateful and stateless components.
+3)Learned to manage dynamic data (books list, input fields, search) using React’s useState hook.
+4)Practiced updating state for adding, removing, and filtering data.
+5)Learned to create a basic CSS file (App.css) and apply it to a component.
+6)Learned to install dependencies (npm install) and run the development server (npm run dev).
