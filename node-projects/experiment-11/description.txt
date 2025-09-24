@@ -1,0 +1,72 @@
+1 Purpose:
+
+Node.js + Express REST API that manages a collection of playing cards.
+Cards can be added, listed, retrieved by ID, and deleted.
+All data is stored in memory (no database required).
+
+2 Functionalities:
+
+List all cards → GET /cards
+Add a new card → POST /cards (requires suit + value)
+Retrieve a card by ID → GET /cards/:id
+Delete a card by ID → DELETE /cards/:id
+Maintains unique id for each card using an incremental counter.
+
+3 Functions (API Endpoints):
+
+(A) GET /cards
+Purpose: Returns all cards currently in memory.
+Valid case: Returns array of cards (can be empty).
+Invalid case: None (always returns JSON array).
+
+(B) POST /cards { suit, value }
+Purpose: Adds a new card with a unique ID.
+Valid case:
+Both suit and value provided → card is added.
+Example: { "suit": "Hearts", "value": "A" }.
+
+Invalid case:
+Missing suit or value → error 400 Bad Request.
+
+(C) GET /cards/:id
+Purpose: Retrieve a specific card by its ID.
+Valid case: ID exists → returns the card.
+Invalid case: ID does not exist → error 404 Not Found.
+
+(D) DELETE /cards/:id
+Purpose: Deletes a card by ID.
+Valid case: ID exists → card removed, returns success message.
+Invalid case: ID not found → error 404 Not Found.
+
+BREAKDOWN OF APPLICATION FLOW:
+
+A) Purpose:
+Handles CRUD-like operations for managing playing cards in memory.
+
+Steps:
+API starts → empty cards array.
+User can add cards with POST /cards.
+Cards can be listed with GET /cards.
+Specific cards can be fetched with GET /cards/:id.
+Cards can be deleted with DELETE /cards/:id.
+
+Valid Cases:
+Adding a card with valid suit + value.
+Listing all cards.
+Fetching a card by valid ID.
+Deleting a card by valid ID.
+
+Invalid Cases:
+Adding card without suit/value.
+Fetching non-existent ID.
+Deleting non-existent ID.
+
+LEARNING OUTCOMES:
+
+Learned how to build a REST API in Node.js with Express.
+Understood CRUD operations (Create, Read, Delete).
+Practiced in-memory state management using arrays.
+Learned route parameters (:id) and request body parsing (express.json()).
+Practiced proper error handling with HTTP status codes (400, 404).
+Understood API testing with Postman or curl.
+Learned to run and document a Node.js backend project.s

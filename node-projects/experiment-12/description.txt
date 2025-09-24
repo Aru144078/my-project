@@ -1,0 +1,77 @@
+1 Purpose:
+
+Node.js + Express application that simulates a ticket booking system for events or movie theaters with seat locking, booking confirmation, and unlocking features.
+It ensures safe concurrent access by using in-memory seat states and lock expiry.
+
+2 Functionalities:
+
+View all seats with current status (available, locked, booked).
+Lock a seat for a user (temporary hold).
+Confirm booking of a locked seat.
+Unlock a seat manually (optional).
+Automatic lock expiry after a timeout.
+All data is stored in memory (no database required).
+
+3 Functions (API Endpoints):
+
+(A) GET /seats
+Purpose: Returns all seats with their status.
+Valid case: Shows seat states (available, locked, booked).
+Invalid case: None, always returns array.
+
+(B) POST /lock { seatId, userId }
+Purpose: Locks a seat for the requesting user with a timeout.
+Valid case:
+Seat is available → locked successfully.
+Seat is already locked by same user → refreshed lock.
+Invalid case:
+Seat not found → error.
+Seat already booked → error.
+Seat locked by another user → error.
+
+(C) POST /confirm { seatId, userId }
+Purpose: Confirms booking of a locked seat.
+
+Valid case:
+Seat locked by same user → changes status to booked.
+Invalid case:
+Seat not locked.
+Seat locked by another user.
+Lock expired.
+
+(D) POST /unlock { seatId }
+Purpose: Manually releases a locked seat (admin or fallback option).
+
+Valid case: Seat found → reset to available.
+Invalid case: Seat not found → error.
+Helper Function: releaseExpiredLocks()
+Runs before each action.
+If lock expiry time has passed → seat is reset to available.
+
+BREAKDOWN OF APPLICATION FLOW:
+
+A) Purpose:
+Handles ticket booking with concurrency protection by using lock + expiry.
+
+Steps:
+User checks /seats → sees available seats.
+User locks seat → seat status becomes locked.
+If user confirms → seat becomes booked.
+If not confirmed in time → lock auto-expires → seat returns to available.
+Valid Cases:
+Booking available seat.
+Same user locking again before expiry.
+Unlocking after lock expiry.
+Invalid Cases:
+Booking already booked seat.
+Locking seat already locked by another user.
+Confirming seat without lock.
+
+LEARNING OUTCOMES:
+Learned to build a Node.js + Express REST API.
+Understood concurrency handling with seat locks and expiry.
+Practiced in-memory state management without a database.
+Learned how to structure routes for lock, confirm, and unlock operations.
+Understood error handling for concurrent requests.
+Learned to run API servers and test endpoints with Postman or curl.
+Practiced documenting code in a clear, structured format.

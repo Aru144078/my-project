@@ -1,0 +1,20 @@
+### Get all cards
+GET http://localhost:3000/cards
+Accept: application/json
+
+### Get a card by ID
+GET http://localhost:3000/cards/2
+Accept: application/json
+
+### Add a new card
+POST http://localhost:3000/cards
+Content-Type: application/json
+
+{
+  "suit": "Clubs",
+  "value": "Jack"
+}
+
+### Delete a card by ID
+DELETE http://localhost:3000/cards/1
+Accept: application/json

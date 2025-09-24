@@ -1,0 +1,84 @@
+EMPLOYEE MANAGEMENT CLI WITH ADD, LIST, AND REMOVE EMPLOYEE FUNCTIONALITY
+BREAKDOWN OF employeeManager.js FILE
+
+1 Purpose:
+Node.js CLI application that implements an Employee Management System using arrays.
+
+2 Functionalities:
+Add new employees (Name + ID).
+List all employees.
+Remove existing employees by ID.
+Interactive command-line menu for navigation.
+All data is stored in memory (no database required).
+
+ 3 Functions:
+
+(A) addEmployee():
+Purpose: Adds a new employee {name, id} into the employees array.
+
+Valid input:
+name and id are non-empty strings.
+Example: "Alice", "101"
+
+Invalid input:
+Empty name or ID (""), null, or undefined
+Example: name="", id="" → Employee is not added
+
+(B) removeEmployee(id):
+Purpose: Removes the employee with the specified ID from the employees array.
+
+Valid input:
+ID exists in the employees array
+
+Invalid input:
+ID does not exist → message shown “Employee with ID not found”
+
+(C) listEmployees():
+Purpose: Displays all employees in a formatted list.
+
+Valid input:
+Any array of employees → shows employee number, name, and ID
+
+Invalid input:
+Empty array → shows “No employees found”
+
+(D) showMenu():
+Purpose: Displays interactive CLI menu to choose options (Add, List, Remove, Exit).
+
+Valid input:
+Choice 1-4
+
+Invalid input:
+Any other number or string → message shown “Invalid choice!”
+
+                 BREAKDOWN OF APPLICATION FLOW:
+
+A) Purpose:
+Handles employee management entirely in the terminal with Node.js, using the built-in readline module.
+
+Steps:
+
+1 Program starts → displays menu in CLI.
+2 User selects option → prompts for input if required.
+3 Updates employees array based on action.
+4 Returns to menu until Exit is selected.
+
+Valid Cases:
+Adding employees with valid Name + ID
+Listing employees
+Removing employees with valid ID
+
+Invalid Cases:
+Empty input
+Removing non-existent ID
+Invalid menu option
+
+LEARNING OUTCOMES:
+
+1 Learned to create a Node.js CLI application.
+2 Understood interactive user input using readline.
+3 Learned array operations: add, remove, list.
+4 Practiced state management in memory without a database.
+5 Understood control flow: loops, conditionals, and menu-driven interface.
+6 Learned to run Node.js scripts and handle terminal outputs.
+7 Learned to document a project for GitHub with description, functions, and screenshots.
