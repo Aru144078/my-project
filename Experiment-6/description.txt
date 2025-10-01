@@ -43,6 +43,7 @@ The drawing experience feels real-time and interactive, without reloading the pa
 
 Learning Outcomes:
 
+
 Understood how to create and manipulate SVG elements dynamically with JavaScript.
 Gained hands-on practice with mouse event handlers (mousedown, mousemove, mouseup).
 Learnt how to update attributes in real time (width, height, coordinates of shapes).
