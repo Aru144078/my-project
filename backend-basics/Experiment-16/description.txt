@@ -1,0 +1,76 @@
+Middleware Implementation for Logging and Bearer Token Authentication
+
+This project demonstrates how to use custom middleware functions in an Express.js server to handle two key backend tasks:
+Logging incoming HTTP requests, and
+Protecting routes using Bearer Token authentication.
+The project helps you understand how middleware flows in Express, how to inspect requests, and how to secure specific endpoints based on authentication rules.
+You will build two middleware functions:
+A Logging Middleware that records the request method, URL, and timestamp for every request.
+An Authentication Middleware that validates an incoming Bearer token (mysecrettoken) before allowing access to protected routes.
+This setup models how real-world APIs track activity and protect data using tokens.
+
+How the Project Works (Flow Explanation):
+
+Start the Express Server:
+The Node.js application runs on a port (for example, 3000).
+
+Global Logging Middleware:
+Every request—whether public or protected—passes through the logging middleware first.
+It logs details such as:
+Request Method (GET, POST, etc.)
+Request URL (/public, /protected, etc.)
+Timestamp (when the request was received)
+
+Authentication Middleware:
+This middleware checks for an Authorization header in the incoming request.
+If the header contains Bearer mysecrettoken, access is granted.
+Otherwise, the request is denied with an appropriate error message.
+Public and Protected Routes:
+The public route (/public) can be accessed freely.
+The protected route (/protected) is accessible only when the correct Bearer token is provided.
+Expected Outcome / Output (in Points):
+
+Server Initialization:
+
+The terminal displays:
+
+Server running on port 3000
+
+Logging Middleware Output (Console):
+For every request, the console logs something like:
+[2025-10-09T21:05:30.123Z] GET /public
+[2025-10-09T21:06:00.456Z] GET /protected
+
+Public Route Response:
+Endpoint: /public
+Response (200 OK):
+{
+  "message": "This is a public route. No authentication required."
+}
+
+Protected Route without Token:
+Endpoint: /protected
+Response (401 Unauthorized):
+{  "error": "Authorization header missing"}
+Protected Route with Wrong Token:
+Header: Authorization: Bearer wrongtoken
+
+Response (403 Forbidden):
+{"error": "Forbidden: Invalid token"}
+
+
+Protected Route with Correct Token:
+Header: Authorization: Bearer mysecrettoken
+Response (200 OK):
+{  "message": "Access granted to protected route"}
+
+
+Middleware Flow Validation:
+
+The logging middleware runs for all routes.
+The authentication middleware runs only for the protected route.
+Both work together to ensure visibility and security.
+
+Testing (via Postman or curl):
+public → Accessible directly.
+protected → Works only with the correct Bearer token.

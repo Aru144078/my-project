@@ -1,0 +1,100 @@
+Account Transfer System with Balance Validation in Node.js
+
+This project demonstrates how to implement a secure money transfer API in Node.js and MongoDB without using database transactions. It simulates a bank account system where users can transfer money between accounts.
+
+The main goals of this project are:
+
+Perform dependent multi-document updates safely without using database transactions.
+Validate account balances before performing transfers.
+Ensure logical correctness and prevent inconsistent or invalid state updates.
+Return meaningful error messages for invalid operations such as insufficient balance or non-existent accounts.
+
+Key Components:
+MongoDB database storing user accounts with fields like username and balance.
+API endpoint /transfer to transfer money from a sender to a recipient.
+
+Balance Validation:
+Check that the sender exists and has sufficient balance.
+Check that the recipient exists.
+
+Sequential Updates:
+Deduct the amount from the sender.
+Add the amount to the recipient.
+Done in application logic to maintain consistency.
+This project helps in understanding how to maintain data integrity through application-level logic when database-level transactions are not used.
+
+ How the Project Works (Flow Explanation):
+
+Transfer Request:
+A client sends a POST request to /transfer with:
+{
+  "from": "Alice",
+  "to": "Bob",
+  "amount": 1000
+}
+Validation Step
+Check sender exists: Return error if sender account does not exist.
+Check recipient exists: Return error if recipient account does not exist.
+Check sender balance: Ensure the sender has enough funds. If not, return an error.
+Update Balances Sequentially:
+Subtract amount from the sender's account.
+Add amount to the recipient's account.
+Save both updates sequentially to MongoDB.
+Error Handling:
+Sender or recipient does not exist → return descriptive error.
+Insufficient balance → return descriptive error.
+Successful transfer → return confirmation message with updated balances.
+Testing Flow
+Create sample accounts in MongoDB.
+Test successful transfers.
+Test failed transfers due to insufficient balance or invalid accounts.
+Ensure no partial updates occur (logical consistency maintained).
+
+ Expected Outcomes / Output (in Points):
+
+Server Initialization
+Terminal displays:
+Server running on port 3000
+Successful Transfer:
+Request:
+{
+  "from": "Alice",
+  "to": "Bob",
+  "amount": 1000
+}
+Response (200 OK):
+{
+  "message": "Transfer successful",
+  "senderBalance": 4000,
+  "recipientBalance": 6000
+}
+Transfer with Insufficient Balance:
+Request: Amount exceeds sender's balance
+Response (400 Bad Request):
+{
+  "error": "Transfer failed: Insufficient balance in sender's account"
+}
+Transfer with Non-Existent Sender:
+Request: Sender username does not exist
+Response (404 Not Found):
+{
+  "error": "Sender account does not exist"
+}
+Transfer with Non-Existent Recipient:
+Request: Recipient username does not exist
+Response (404 Not Found):
+{
+  "error": "Recipient account does not exist"
+}
+
+Logical Consistency Check:
+Failed transfers do not update any balances.
+Successful transfers update both accounts sequentially.
+The system maintains correct and consistent account balances without using database transactions.
+
+Testing via Postman or curl:
+Demonstrate a variety of transfer scenarios:
+Successful transfers
+Transfers blocked due to insufficient funds
+Transfers blocked due to invalid accounts
+Confirm that balances remain consistent after each operation.

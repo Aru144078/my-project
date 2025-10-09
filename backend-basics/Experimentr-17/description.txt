@@ -1,0 +1,110 @@
+JWT Authentication for Secure Banking API Endpoints
+
+
+This project demonstrates how to implement secure authentication in an Express.js application using JSON Web Tokens (JWT). It simulates a banking API with sensitive endpoints such as viewing account balance, depositing money, and withdrawing money.
+
+The main goals of this project are:
+Generate JWT tokens on successful login.
+Verify JWT tokens using middleware to protect sensitive routes.
+Ensure that only authorized users can perform banking operations.
+Handle common errors like missing/invalid tokens and insufficient funds.
+
+Key Components:
+
+login route: Accepts hardcoded username and password, generates a signed JWT token
+JWT verification middleware: Checks the Authorization header for a valid Bearer token before allowing access to protected banking routes.
+
+Protected routes:
+
+balance – View current account balance
+deposit – Add money to the account
+withdraw – Withdraw money, only if sufficient balance exists
+This project models real-world secure API design practices, showing how token-based authentication works in Node.js backend applications.
+
+ How the Project Works (Flow Explanation):
+
+User Login:
+
+A user sends a POST request to /login with a hardcoded username and password.
+If credentials are correct, the server responds with a signed JWT token.
+The token contains payload data (like username) and an expiration time.
+
+Token Verification Middleware:
+Every protected route (/balance, /deposit, /withdraw) passes through the JWT middleware.
+Middleware extracts the token from the Authorization header (Bearer <token>) and verifies it.
+If the token is valid, the request proceeds; otherwise, it returns an error.
+
+Banking Operations:
+
+balance: Returns the current account balance.
+deposit: Adds the specified amount to the balance and returns the updated balance.
+withdraw: Subtracts the specified amount if there is sufficient balance; otherwise, returns an error.
+
+Error Handling:
+Missing Authorization header → 401 Unauthorized
+Invalid or expired JWT → 403 Forbidden
+Withdrawal amount exceeds balance → Custom error message
+
+Testing Flow:
+Step 1: Login to obtain JWT token.
+Step 2: Send token as Bearer <token> in requests to protected endpoints.
+Step 3: Observe proper access control and error messages for unauthorized or invalid requests.
+
+Expected Outcomes / Output (in Points):
+
+Server Initialization:
+Terminal displays
+Server running on port 3000
+Login Route (/login):
+POST with correct credentials → Response:
+{
+  "token": "<JWT token>"
+}
+POST with wrong credentials → Response:
+{
+  "error": "Invalid username or password"
+}
+Accessing Protected Routes Without Token:
+Response:
+{
+  "error": "Authorization header missing"
+}
+Status: 401 Unauthorized
+Accessing Protected Routes With Invalid Token:
+Response:
+{
+  "error": "Invalid or expired token"
+}
+Status: 403 Forbidden
+Viewing Account Balance (/balance):
+With valid token → Response:
+{
+  "balance": 5000
+}
+
+Depositing Money (/deposit):
+With valid token and amount (e.g., 1000) → Response:
+{
+  "message": "Deposit successful", "balance": 6000
+}
+Withdrawing Money (/withdraw):
+With sufficient balance → Response:
+{
+  "message": "Withdrawal successful",
+  "balance": 4000
+}
+With insufficient balance → Response:
+{
+  "error": "Insufficient balance"
+}
+
+
+JWT Middleware Flow Verification:
+
+Protected routes execute only after successful token verification.
+Unauthorized requests are blocked.
+All operations ensure secure access control.
+Testing via Postman or curl:
+Login → Obtain JWT token
+Include token in Authorization header for protected routes
+Observe correct responses for valid, missing, or invalid tokens
