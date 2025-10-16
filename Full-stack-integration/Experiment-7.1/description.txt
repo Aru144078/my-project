@@ -1,0 +1,63 @@
+RODUCT LIST APP – React + Express.js
+1. Purpose
+A simple Product Listing application built with React on the frontend and Express.js on the backend.
+Features:
+Displays a list of products fetched from the backend API.
+Allows users to “buy” a product via a button (simulated with an alert).
+Uses Axios for HTTP requests.
+Styled with modern CSS for cards and buttons.
+Ideal for learning API fetching, state management, and React + Express integration.
+
+2. Functionalities
+Functionality
+Fetch Products- akes a GET request to /api/products and displays products.
+Display Products-Shows products in cards with name, price, and a Buy button.
+Buy Product	-alert the user of the purchased product when clicked.
+
+3. Backend – Express.js
+
+server.js:
+Description:
+
+Returns a list of products in JSON format.
+
+CORS enabled for React frontend.
+
+Runs on port 5000.
+
+4. Frontend – React
+
+App.jsx
+5. Frontend Styling – App.css
+
+for valid :
+
+| Scenario          | Input / Action         | Expected Outcome                                                 |
+| ----------------- | ---------------------- | ---------------------------------------------------------------- |
+| Fetch products    | Open app               | Products are displayed in cards with name, price, and Buy button |
+| Buy a product     | Click Buy on a product | Alert shows: "You bought: <product name> for ₹<price>"           |
+| Loading state     | Slow network           | "Loading..." is displayed until data is fetched                  |
+| Multiple products | All products fetched   | All cards appear correctly                                       |
+| Button hover      | Hover over Buy button  | Button changes color to darker blue                              |
+
+for invalid cases:
+
+
+| Scenario                | Input / Action               | Expected Outcome                           |
+| ----------------------- | ---------------------------- | ------------------------------------------ |
+| Backend down            | Server not running           | Displays "Error fetching products" in red  |
+| API URL incorrect       | Axios GET URL wrong          | Displays error message                     |
+| Empty product list      | Products array empty         | Displays empty container (no cards)        |
+| Long product name       | Product name >50 chars       | Text wraps inside card without breaking UI |
+| Buy button double-click | Click quickly multiple times | Alerts multiple times for each click       |
+
+
+Learning Outcomes
+1)Learned Express.js routing and API creation.
+2)Integrated frontend with backend-axios.
+
+Practiced state management (useState, useEffect) for API data.
+
+Implemented loading and error handling for asynchronous requests.
+
+Styled components with CSS (cards, buttons, hover effects).
